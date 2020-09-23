@@ -3,8 +3,6 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-
-
 /* ------------------------ App Routes ---------------------------- */
 
 router
