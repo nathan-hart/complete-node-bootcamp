@@ -1,16 +1,32 @@
+const fs = require('fs');
 const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => { // http method for when get method is sent to server
-  res.status(200).json({ message: 'Hello from server side', app: 'Natours' });
+app.use(express.json());
+
+/* -------------------------------------------------------------------- */
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+app.get(`/api/v1/tours`, (req, res) => {
+  res.status(200).json({ // wrapping the JSON response in another JSON
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours, // JSON data
+    },
+  });
 });
 
-app.post('/', (req,res) => {
-    res.send('You can post to this endpoint...')
+app.post('/api/v1/tours', (req,res) => {
+  console.log(req.body)
+  res.send('You can post to this endpoint...')
 })
 
-const port = 3000;
-app.listen(3000, () => {
+/* -------------------------------------------------------------------- */
+const port = 2000;
+app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
