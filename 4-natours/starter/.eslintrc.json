@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
+  // "eslint.run": "onSave",
   "rules": {
     "prettier/prettier": [
       "error",
