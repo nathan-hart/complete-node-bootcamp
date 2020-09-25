@@ -33,21 +33,23 @@ const importData = async () => {
   } catch (err) {
     console.log(err);
   }
+  process.exit();
 };
 
 // DELETE ALL DATA FROM DB
 const deleteData = async () => {
   try {
     await Tour.deleteMany();
-    console.log('Data succesfully deleted');
+    console.log(`Data succesfully deleted`);
   } catch (err) {
     console.log(err);
   }
+  process.exit();
 };
 
-if (process.argv[2] === 'import') {
+if (process.argv[2] === '--import') {
   importData();
-} else if (process.argv[2] === 'delete') {
+} else if (process.argv[2] === '--delete') {
   deleteData();
 }
 
