@@ -1,0 +1,19 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Root Project - Git Control",
+      "description": "This is a description",
+      "focus": true,
+      "command": "echo \"Hello World\"",
+      "cwd": "C:/Users/natan.h/Desktop/Coding/complete-node-bootcamp"
+    },
+    {
+      "name": "Natours",
+      "description": "This is a description",
+      "focus": true,
+      "command": "echo \"Hello World\"",
+      "cwd": "C:/Users/natan.h/Desktop/Coding/complete-node-bootcamp/4-natours/starter"
+    }
+  ]
+}
